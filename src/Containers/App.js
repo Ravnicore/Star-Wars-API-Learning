@@ -1,9 +1,10 @@
 import React from 'react';
 import SearchBoxPeople from '../Components/SearchBoxPeople';
-//import CardPeople from '../Components/CardPeople';
 import CardPeopleList from '../Components/CardPeopleList';
+import Scroll from '../Components/Scroll';
+import StarWarsLogo from '../Images/star_wars_logo.png';
 import './App.css';
-import '../Components/Header'
+import '../Components/Header';
 
 class App extends React.Component {
   constructor() {
@@ -44,6 +45,7 @@ class App extends React.Component {
        }catch (err){
          console.log('Could not find star wars people list: ', err);
        }
+       console.log('I was triggered during render');
   }
 
    onSearchPeopleChange = (event) =>{
@@ -55,31 +57,43 @@ class App extends React.Component {
     const filteredPeople = people.filter(person=>{
       return person.name.toLowerCase().includes(searchFieldPeople.toLowerCase());
     })
-    return (
-      <div className="flex flex-column App">
-        <div className='flex flex-row justify-center'>
-          <h1 className='SW1'>STAR WARS</h1>
-        </div>
-        <div className='flex flex-row justify-around filterAndCards'>
-          <div className='flex flex-column w-20'>
-            <div className='flex flex-row outline'>
-              <h2 className="sectionTitles">Filter Area</h2>
-            </div>
-            <div className='flex flex-row'>
-              <h3>Name</h3>
-              <SearchBoxPeople searchPeopleChange={this.onSearchPeopleChange}/>
-            </div>
+    return( 
+    // !people.length ?
+    //   <h1>Loading</h1> : //if there are no cards
+    // (
+      <div className='WholeAppLayout'>
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+        <div className="clouds"></div>
+        <div className="flex flex-column App">
+          <div className='flex flex-row justify-center titleText'>
+            <h1 className='SW1'>
+              <img src={StarWarsLogo} alt='STAR WARS' />
+            </h1>
           </div>
-          <div className='flex flex-column w-70'>
-            <div className='flex flex-row outline'>
-              <h2 className="sectionTitles w-100">Cards Area</h2>
-            </div>
-            <div className='flex flex-row'>
-              <div className='fullCardList w-100'>
-                <CardPeopleList  people={ filteredPeople } />
+          <div className='flex flex-row justify-around filterAndCards'>
+            <div className='flex flex-column w-20'>
+              <div className='flex flex-row outline'>
+                <h2 className="sectionTitles w-100">Filter Area</h2>
+              </div>
+              <div className='flex flex-row items-center justify-center filterTextBox'>
+                <p>Name:</p>
+                <SearchBoxPeople searchPeopleChange={this.onSearchPeopleChange}/>
               </div>
             </div>
-          </div>  
+            <div className='flex flex-column w-70'>
+              <div className='flex flex-row outline'>
+                <h2 className="sectionTitles w-100">Cards Area</h2>
+              </div>
+              <div className='flex flex-row'>
+                <div className='fullCardList w-100'>
+                  <Scroll>
+                    <CardPeopleList  people={ filteredPeople } />
+                  </Scroll>
+                </div>
+              </div>
+            </div>  
+          </div>
         </div>
       </div>
     );

@@ -11,6 +11,10 @@ const CardPeopleList = ({ people }) =>{
 					key={i}
 					name={people[i].name} 
 					gender={people[i].gender}
+					height={people[i].height}
+					mass={people[i].mass}
+					skin_color={people[i].skin_color}
+					birth_year={people[i].birth_year}
 					/>
 				);
 			})

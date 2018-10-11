@@ -1,10 +1,22 @@
-.App {
-/*	margin-right: 0em;
-	margin-left: 0em;*/
-  	color: white;
+body {
+  overflow-y:hidden;
+}
+
+.WholeAppLayout{
+  overflow: hidden;
 }
 
 
+.App {
+/*  margin-right: 0em;
+  margin-left: 0em;*/
+    color: #C0B009;
+    z-index: 3;
+}
+
+.titleText img{
+  width: 20vw;
+}
 
 .SW1 {
   margin: 0.1em;
@@ -16,15 +28,133 @@
 }
 
 .filterAndCards{
-	margin-top: 2em;
+  margin-top: 2em;
 }
 
 .sectionTitles{
-	text-align: center;
+  text-align: center;
 }
 
 .fullCardList {
-	text-align: center;
+  text-align: center;
+}
+
+.filterTextBox{
+  font-size: 1vw;
+  padding-top: 1em;
+}
+.filterTextBox p{
+  font-size: 2vw;
+  margin: 0;
+  padding-right: 0.5em;
 }
 
 
+
+
+
+.cardPersonTitle {
+      color: #C0B009;
+      text-shadow: -1px 0 #151515, 0 1px #151515, 1px 0 #151515, 0 -1px #151515;
+}
+/* modal */
+.modalHeaderPeople{
+  display: block;
+  text-align: center;
+  background-color: #1C1C1C;
+  background-image: radial-gradient(#000, #333);
+
+}
+
+.modalPeopleTitle{  color: yellow;
+  font-size: 2em;
+}
+
+.modalBodyPeople {
+  text-align: center;
+  background-color: darkgray;
+}
+
+.modalFooterPeople {
+  background-color: #1C1C1C;
+  background-image: linear-gradient(240deg, #333, #000);
+}
+
+.modalCloseX {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 1.2em;
+  border-radius: 18px;
+}
+
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+   to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+.stars {
+  background:#000 url(../Images/stars.png) repeat top center;
+  z-index:-1;
+}
+.twinkling{
+  background:transparent url(../Images/twinkling.png) repeat top center;
+  z-index:-1;
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+.clouds{
+    background:transparent url(../Images/clouds.png) repeat top center;
+    z-index:-1;
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
