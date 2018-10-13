@@ -18,6 +18,15 @@ body {
   width: 20vw;
 }
 
+.loadingHeader {
+  margin: 0.1em;
+  font-size: 4em;
+  text-align: center;
+  color: yellow;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-decoration: underline;
+}
+
 .SW1 {
   margin: 0.1em;
   font-size: 4em;
@@ -40,29 +49,36 @@ body {
 }
 
 .filterTextBox{
-  font-size: 1vw;
+  font-size: 0.8vw;
   padding-top: 1em;
 }
 .filterTextBox p{
-  font-size: 2vw;
+  font-size: 1.3vw;
   margin: 0;
   padding-right: 0.5em;
 }
 
-
-
-
+/* ========================================= */
+/* ========================================= */
+/* ======         PEOPLE            ======== */
+/* ========================================= */
+/* ========================================= */
+.peopleCardContainer {
+  background: radial-gradient( ellipse, #141414 4em,  #4B638D );
+  border: 1px solid white;
+}
 
 .cardPersonTitle {
       color: #C0B009;
       text-shadow: -1px 0 #151515, 0 1px #151515, 1px 0 #151515, 0 -1px #151515;
 }
 /* modal */
+
 .modalHeaderPeople{
   display: block;
   text-align: center;
   background-color: #1C1C1C;
-  background-image: radial-gradient(#000, #333);
+  background-image: radial-gradient(#000, #000, #333);
 
 }
 
@@ -72,14 +88,72 @@ body {
 
 .modalBodyPeople {
   text-align: center;
-  background-color: darkgray;
+  font-weight: bold;
+  color: #FFF440;
+  text-shadow: -1px 0 #151515, 0 1px #151515, 1px 0 #151515, 0 -1px #151515;
+  background-image: linear-gradient(to right, black, gray, gray, black);
 }
 
 .modalFooterPeople {
   background-color: #1C1C1C;
-  background-image: linear-gradient(240deg, #333, #000);
+  background-image: radial-gradient(#000, #000, #333);
 }
 
+/* ========================================= */
+/* ========================================= */
+/* ======         Vehicles          ======== */
+/* ========================================= */
+/* ========================================= */
+
+.vehiclesCardContainer {
+  background: radial-gradient( ellipse, #141414 4em,  #C06010 );
+  border: 1px solid white;
+}
+
+.cardVehicleTitle {
+      color: #C0B009;
+      text-shadow: -1px 0 #151515, 0 1px #151515, 1px 0 #151515, 0 -1px #151515;
+}
+/* modal */
+
+.modalHeaderVehicles{
+  display: block;
+  text-align: center;
+  background-color: #1C1C1C;
+  background-image: radial-gradient(#000, #000, #333);
+
+}
+
+.modalVehiclesTitle{  
+  color: yellow;
+  font-size: 2em;
+}
+
+.modalBodyVehicles {
+  text-align: center;
+  font-weight: bold;
+  color: #FFF440;
+  text-shadow: -1px 0 #151515, 0 1px #151515, 1px 0 #151515, 0 -1px #151515;
+  background-image: linear-gradient(to right, black, gray, gray, black);
+}
+
+.modalFooterVehicles {
+  background-color: #1C1C1C;
+  background-image: radial-gradient(#000, #000, #333);
+}
+
+
+
+
+
+/* ========================================= */
+/* ========================================= */
+/* ======     All Modals edit       ======== */
+/* ========================================= */
+/* ========================================= */
+.modal-content {
+  border: 1px solid #B8B8B8;
+}
 .modalCloseX {
   cursor: pointer;
   position: absolute;
@@ -92,6 +166,7 @@ body {
   font-size: 1.2em;
   border-radius: 18px;
 }
+
 
 
 @keyframes move-twink-back {

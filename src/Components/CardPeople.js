@@ -31,7 +31,7 @@ class CardPeople extends Component {
   		const { name, gender, height, mass, skin_color, birth_year } = this.props;
   		const closeBtn = <button className="modalCloseX" onClick={this.toggle}>&times;</button>;
 		return (		
-			<div className='tc black bg-gray dib br3 pa3 ma2 grow bw2 shadow-5' onClick={this.toggle}>
+			<div className='tc black dib br3 pa3 ma2 grow shadow-5 peopleCardContainer' onClick={this.toggle}>
 				<img alt='people' src={`http://2.bp.blogspot.com/-HzFJhEY3KtU/Tea7Ku92cpI/AAAAAAAAALw/uBMzwdFi_kA/s1600/1.jpg`} width="50%" />
 	    		<div>
 					<h1 className='cardPersonTitle'>{name}</h1>
@@ -59,4 +59,3 @@ class CardPeople extends Component {
 }
 
 export	default CardPeople;
-			//<img alt='people' src={`https://swapi.co/api/people/1?size=200x200`} />
