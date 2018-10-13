@@ -3,7 +3,7 @@ import CardVehicles from './CardVehicles';
 
 const CardVehiclesList = ({ vehicles }) =>{
 	return(
-		<div>
+		<div className='vehiclesCardsContainer'>
 			{
 			vehicles.map((vehicle, i) =>{	
 				return(

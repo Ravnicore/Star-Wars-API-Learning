@@ -79,10 +79,32 @@ class App extends React.Component {
   }
 
    onSearchPeopleChange = (event) =>{
+    let removeVehicleCards = document.querySelector(".vehiclesCardsContainer");
      this.setState({ searchFieldPeople: event.target.value })
+     if (event.target.value !== null){
+      console.log(event.target.value);
+        if (removeVehicleCards.style.display !== "none" && event.target.value !== "" ){
+          removeVehicleCards.style.display = "none";
+        }
+        if (removeVehicleCards.style.display === "none" && event.target.value === "") {
+          removeVehicleCards.style.display = "block";
+        }
+     }
    }
+
+
    onSearchVehiclesChange = (event) =>{
-     this.setState({ searchFieldVehicles: event.target.value })
+    let removePeopleCards = document.querySelector(".PeopleCardsContainer");
+     this.setState({ searchFieldVehicles: event.target.value });
+     if (event.target.value !== null){
+      console.log(event.target.value);
+        if (removePeopleCards.style.display !== "none" && event.target.value !== "" ){
+          removePeopleCards.style.display = "none";
+        }
+        if (removePeopleCards.style.display === "none" && event.target.value === "") {
+          removePeopleCards.style.display = "block";
+        }
+     }
    }
 
   render() {

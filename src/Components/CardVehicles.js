@@ -32,7 +32,7 @@ class CardVehicles extends Component {
   		const { name, model, manufacturer, max_atmosphering_speed, passengers, cargo_capacity, cost_in_credits } = this.props;
   		const closeBtn = <button className="modalCloseX" onClick={this.toggle}>&times;</button>;
 		return (		
-			<div className='black dib br3 pa3 ma2 grow shadow-5 vehiclesCardContainer' onClick={this.toggle}>
+			<div className='black dib br3 pa3 ma2 grow shadow-5 vehicleCard' onClick={this.toggle}>
 				<img alt='vehicles' src={SandCrawler} width="50%" />
 	    		<div>
 					<h1 className='cardVehicleTitle'>{name}</h1>

@@ -3,7 +3,7 @@ import CardPeople from './CardPeople';
 
 const CardPeopleList = ({ people }) =>{
 	return(
-		<div>
+		<div className='PeopleCardsContainer'>
 			{
 			people.map((person, i) =>{	
 				return(

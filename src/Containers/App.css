@@ -63,7 +63,7 @@ body {
 /* ======         PEOPLE            ======== */
 /* ========================================= */
 /* ========================================= */
-.peopleCardContainer {
+.personCard {
   background: radial-gradient( ellipse, #141414 4em,  #4B638D );
   border: 1px solid white;
 }
@@ -99,13 +99,17 @@ body {
   background-image: radial-gradient(#000, #000, #333);
 }
 
+.PeopleCardsContainer {
+
+}
+
 /* ========================================= */
 /* ========================================= */
 /* ======         Vehicles          ======== */
 /* ========================================= */
 /* ========================================= */
 
-.vehiclesCardContainer {
+.vehicleCard {
   background: radial-gradient( ellipse, #141414 4em,  #C06010 );
   border: 1px solid white;
 }
@@ -142,7 +146,9 @@ body {
   background-image: radial-gradient(#000, #000, #333);
 }
 
+.vehiclesCardsContainer {
 
+}
 
 
 
