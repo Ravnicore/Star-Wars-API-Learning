@@ -4,6 +4,8 @@ import CardPeopleList from '../Components/CardPeopleList';
 import CardVehiclesList from '../Components/CardVehiclesList';
 import SearchBoxPeople from '../Components/SearchBoxPeople';
 import SearchBoxVehicles from '../Components/SearchBoxVehicles';
+// import radioFilterButtons from '../Components/radioFilterButtons';
+import { Button } from 'reactstrap';
 import Scroll from '../Components/Scroll';
 import './App.css';
 import '../Components/Header';
@@ -21,6 +23,8 @@ class App extends React.Component {
       vehicle: '',
       numberOfVehicles: ''
     }
+    this.onRadioBtnClick = this.onRadioBtnClick.bind(this);
+    this.state.rSelected = 1;
   }
 
   async componentDidMount() {
@@ -107,6 +111,23 @@ class App extends React.Component {
      }
    }
 
+   onRadioBtnClick(rSelected) {
+    this.setState({ rSelected });
+    let removeVehicleCards = document.querySelector(".vehiclesCardsContainer");
+    let removePeopleCards = document.querySelector(".PeopleCardsContainer");
+    if (rSelected === 1){
+      removePeopleCards.style.display = "block";
+      removeVehicleCards.style.display = "block";
+    }else if (rSelected === 2) {
+      removePeopleCards.style.display = "block";
+      removeVehicleCards.style.display = "none";
+    }else if (rSelected === 3){
+      removePeopleCards.style.display = "none";
+      removeVehicleCards.style.display = "block";
+    }
+  }
+
+
   render() {
     const { people, searchFieldPeople, vehicles, searchFieldVehicles } = this.state;
     const filteredPeople = people.filter(person=>{
@@ -123,33 +144,83 @@ class App extends React.Component {
         <div className="clouds"></div>
         <div className="flex flex-column App">
           <Header />
-          <div className='flex flex-row justify-around filterAndCards'>
-            <div className='flex flex-column w-20'>
-              <div className='flex flex-row outline'>
-                <h2 className="sectionTitles w-100">Filter Area</h2>
-              </div>
-              <div className='flex flex-row items-center justify-center filterTextBox'>
-                <p>Person's Name:</p>
-                <SearchBoxPeople searchPeopleChange={this.onSearchPeopleChange}/>
-              </div>
-              <div className='flex flex-row items-center justify-center filterTextBox'>
-                <p>Vehicle's Name:</p>
-                <SearchBoxVehicles searchVehiclesChange={this.onSearchVehiclesChange}/>
+          <div className='flex flex-column w-100 filterAndCards'>
+            <div className='flex flex-row justify-center'>
+              <div className='flex flex-column w-70'>
+                <div className='flex flex-row outline'>
+                  <h2 className="sectionTitles w-100">Filter Area</h2>
+                </div>
+                <div className='flex flex-column filterAllTextArea'>
+                  <div  className='flex flex-row'>
+                    <div className='flex flex-column w-50 filterByCardNameCol'>
+                      <div className='flex flex-row justify-center'>
+                        <h4>Filter By Card Name</h4>
+                      </div>
+                      <div className='flex flex-column'>
+                        <div className='flex flex-row justify-center filterTextBox'>
+                        <div class="flex flex-wrap">                      
+                          <div className='flex flex-column w-50 tr'>
+                            <div><p>Person's Name:</p></div>
+                          </div>
+                          <div className='flex flex-column w-50 rl'>
+                            <div><SearchBoxPeople searchPeopleChange={this.onSearchPeopleChange}/></div>
+                          </div>
+                        </div>  
+                        </div>
+                        <div className='flex flex-row justify-center filterTextBox'>
+                          <div className='flex flex-column w-50 tr'>
+                            <p>Vehicle's Name:</p>
+                          </div>
+                          <div className='flex flex-column w-50 rl'>
+                            <SearchBoxVehicles searchVehiclesChange={this.onSearchVehiclesChange}/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='flex flex-column w-50 filterByCardTypeCol'>
+                      <div className='flex flex-row justify-center'>
+                        <h4>Select Card Type</h4>
+                      </div>
+                      <div className='flex flex-column w-100'>
+                        <div className='flex flex-row justify-center'>
+                          <div>
+                            <p><span className='filterRadioText'>All The Cards</span><Button className='filterRadioButtons' color="danger" onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}></Button></p>
+                          </div>
+                        </div>
+                        <div className='flex flex-row justify-center'>  
+                          <div>
+                            <p><span className='filterRadioText'>People Cards</span><Button className='filterRadioButtons' color="danger" onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}></Button></p>
+                          </div>
+                        </div>
+                        <div className='flex flex-row justify-center'>
+                          <div>
+                            <p><span className='filterRadioText'>Vehicle Cards</span><Button className='filterRadioButtons' color="danger" onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}></Button></p>
+                          </div>
+                        </div>                        
+                      </div>
+                    </div>
+                  </div>                  
+                </div>  
               </div>
             </div>
-            <div className='flex flex-column w-70'>
-              <div className='flex flex-row outline'>
-                <h2 className="sectionTitles w-100">Cards Area</h2>
-              </div>
-              <div className='flex flex-row'>
-                <div className='fullCardList w-100'>
-                  <Scroll>
-                    <CardPeopleList  people={ filteredPeople } />
-                    <CardVehiclesList  vehicles={ filteredVehicles } />
-                  </Scroll>
+            <div className='flex flex-row justify-center'>
+              <div className='flex flex-column w-90'>
+                <div className='flex flex-row outline'>
+                  <h2 className="sectionTitles w-100">Cards Area</h2>
+                </div>
+                <div className='flex flex-row'>
+                  <div className='fullCardList w-100'>
+                    <Scroll>
+                      <CardPeopleList  people={ filteredPeople } />
+                      <CardVehiclesList  vehicles={ filteredVehicles } />
+                    </Scroll>
+                  </div>
                 </div>
               </div>
             </div>  
+          </div>
+          <div>
+            <br />
           </div>
         </div>
       </div>
