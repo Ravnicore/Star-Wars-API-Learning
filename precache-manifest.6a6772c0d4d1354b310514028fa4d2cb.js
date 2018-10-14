@@ -20,23 +20,23 @@ self.__precacheManifest = [
     "url": "/Star-Wars-API-Learning/static/js/runtime~main.909cec59.js"
   },
   {
-    "revision": "4167508f622808f6196f",
-    "url": "/Star-Wars-API-Learning/static/js/main.4167508f.chunk.js"
+    "revision": "c3e416084aa44ef6a3d7",
+    "url": "/Star-Wars-API-Learning/static/js/main.c3e41608.chunk.js"
   },
   {
-    "revision": "a761168ae28724249f40",
-    "url": "/Star-Wars-API-Learning/static/js/1.a761168a.chunk.js"
+    "revision": "60a478a40f18a1d9c64f",
+    "url": "/Star-Wars-API-Learning/static/js/1.60a478a4.chunk.js"
   },
   {
-    "revision": "4167508f622808f6196f",
-    "url": "/Star-Wars-API-Learning/static/css/main.5a8b3224.chunk.css"
+    "revision": "c3e416084aa44ef6a3d7",
+    "url": "/Star-Wars-API-Learning/static/css/main.48dbb992.chunk.css"
   },
   {
-    "revision": "a761168ae28724249f40",
+    "revision": "60a478a40f18a1d9c64f",
     "url": "/Star-Wars-API-Learning/static/css/1.91edf02b.chunk.css"
   },
   {
-    "revision": "c9063999015ac068f5eaae91c171bfe6",
+    "revision": "2fc512bc00e12a8c39694b13eba29f0e",
     "url": "/Star-Wars-API-Learning/index.html"
   }
 ];
